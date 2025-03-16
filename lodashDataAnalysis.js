@@ -1,14 +1,15 @@
+//run "nvm install v22.14.0" in command line to run latest version of node
+
 import fs from 'fs';
 import { parse } from 'csv-parse';
 import _ from 'lodash';
 import { Parser as j2csv } from "json2csv";
 
 Promise.all([
-    readRawData("   "),
-    readRawData("   ")
+    readRawData("2013-2023.csv"),
+    readRawData("2020.csv")
 ])
 .then(([data1, data2]) => {
-    readData("  ", function () {
 
         console.log("First Dataset:", data1.length);
         console.log("Second Dataset:", data2.length);
@@ -23,8 +24,6 @@ Promise.all([
         // a. countries that were removed from 2020 dataset 
         // b. countries that were added in 2022 dataset
         
-
-    });
 })
 .catch(error => {
     console.error("Error reading CSV files:", error);
